@@ -29,17 +29,19 @@
 		});
 
 		window.onscroll = checkScrollingAndLoad;
+		
 		checkScrollingAndLoad();
 
 		function checkScrollingAndLoad() {
 
-			console.log(window.innerHeight);
+			var length = notYetLoadedImages.length;
+			if (length == 0) {
+				return;
+			}
 
 			var foldY = window.innerHeight + window.pageYOffset;
 
-			var length = notYetLoadedImages.length
 			var currentElement = null;
-
 			var loadedPictureIndexes = [];
 
 			for (var i = 0; i < length; i++) {
@@ -48,6 +50,7 @@
 
 				//if visble
 				if (deltaY <= foldY + settings.threshold) {
+					console.log("asdf");
 					currentElement.attr("src", "http://www.dafont.com/img/dafont.png")
 					loadedPictureIndexes.push(i);
 				}
@@ -57,15 +60,15 @@
 
 			for (var u = loadedLength; u >= 0; u--) {
 				notYetLoadedImages.splice(u, 1);
-				console.log("deleting " + u);
 			}
-			console.log(loadedPictureIndexes);
 
 		}
 
 		return this;
 	};
-	// $.fn.lazyImages.loadAll() {
-	//
-	// }
+	
+	$.fn.lazyImages.loadAll = function() {
+	
+	}
+	
 })(jQuery, window, document);

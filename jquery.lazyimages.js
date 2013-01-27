@@ -10,7 +10,7 @@
 
 		var defaultSettings = {
 			threshold : 100,
-			sourceAttribute : "lazy-source",
+			sourceAttribute : "data-original",
 			onLoad : function() {
 				console.log("onload called");
 			}

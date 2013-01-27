@@ -2,15 +2,9 @@
 
 ## lazyIamges
 
-pjax is a jQuery plugin that uses ajax and pushState to deliver a fast browsing experience with real permalinks, page titles, and a working back button.
-
-pjax works by grabbing html from your server via ajax and replacing the content of a container on your page with the ajax'd html. It then updates the browser's current url using pushState without reloading your page's layout or any resources (js, css), giving the appearance of a fast, full page load. But really it's just ajax and pushState.
-
-For [browsers that don't support pushState][compat] pjax fully degrades.
+For [bla][bla] pjax fully degrades.
 
 ## Overview
-
-pjax is not fully automatic. You'll need to setup and designate a containing element on your page that will be replaced when you navigate your site.
 
 Consider the following page.
 
@@ -79,7 +73,7 @@ bla bla:
 2. second
 3. third
 
-### `$.pjax.click`
+### `$.asdf.click`
 
 bla
 

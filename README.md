@@ -2,7 +2,7 @@
 
 ## What's it for?
 
-lazyImages is a small jQuery plugin that helps you make your site load 
+lazyImages is a lightweight jQuery plugin that helps you make your site load 
 faster by postponing the loading of images until they get close to the viewport.
 
 ## Usage
@@ -66,7 +66,7 @@ Fire up the plugin by passing in the selector of your images and if needed a cus
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".lazy-image").lazyImages({
-				threshold : 100
+				threshold : 500
 			});
 		});
 	</script>

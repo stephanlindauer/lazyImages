@@ -1,7 +1,7 @@
 /*
  *  Project: lazyImages
- *  Description: jQuery for loading of images only when they get close to the viewport
- *  Author: stephan lindauer
+ *  Description: jQuery plugin for lazy loading images
+ *  Author: stephan lindauer - @stephanlindauer - www.punini.de
  */
 
 ;(function($, window, document, undefined) {
@@ -11,9 +11,6 @@
 		var defaultSettings = {
 			threshold : 100,
 			sourceAttribute : "data-original",
-			onLoad : function() {
-				console.log("onload called");
-			}
 		}
 
 		var notYetLoadedImages = [];
@@ -22,17 +19,13 @@
 		this.each(function() {
 			$this = $(this);
 			notYetLoadedImages.push($this);
-			$this.css({
-				'width' : '100px',
-				'height' : '100px',
-			});
 		});
 
-		window.onscroll = checkScrollingAndLoad;
-		
-		checkScrollingAndLoad();
+		window.onscroll = checkPositionsAndLoad;
 
-		function checkScrollingAndLoad() {
+		checkPositionsAndLoad();
+
+		function checkPositionsAndLoad() {
 
 			var length = notYetLoadedImages.length;
 			if (length == 0) {
@@ -50,8 +43,8 @@
 
 				//if visble
 				if (deltaY <= foldY + settings.threshold) {
-					console.log("asdf");
-					currentElement.attr("src", "http://www.dafont.com/img/dafont.png")
+					var actualImageSrc = currentElement.attr(settings.sourceAttribute);
+					currentElement.attr("src", actualImageSrc)
 					loadedPictureIndexes.push(i);
 				}
 			}
@@ -66,9 +59,5 @@
 
 		return this;
 	};
-	
-	$.fn.lazyImages.loadAll = function() {
-	
-	}
-	
+
 })(jQuery, window, document);

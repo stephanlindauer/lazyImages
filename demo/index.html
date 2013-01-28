@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>lazyImages Test</title>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="../jquery.lazyimages.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".lazy-image").lazyImages({
+					onLoad : function() {
+						console.log("custom on load function");
+					}
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		
+		<p>
+			Hello world!
+		</p>
+
+		<img src="images/placeholder.png" data-original="images/1.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/2.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/3.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/4.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/5.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/6.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/7.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/8.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/9.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/10.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/11.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/12.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/13.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/14.bmp" class="lazy-image"/>
+		<br />
+		<img src="images/placeholder.png" data-original="images/15.bmp" class="lazy-image"/>
+		<br />
+
+	</body>
+</html>

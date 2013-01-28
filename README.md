@@ -1,100 +1,80 @@
 # lazyIamges
 
-## lazyIamges
+## What's it for?
 
-For [bla][bla] pjax fully degrades.
-
-## Overview
-
-Consider the following page.
-
-``` html
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-  <h1>My Site</h1>
-</body>
-</html>
-```
-bla bla bla
-
-``` javascript
-$(document).bla('a', '#bla')
-```
-
-bla
-
-## Installation
-
-### standalone
-
-bla bla
-
-```
-curl -O asdf
-```
-
-**WARNING** Do not bla bla
-
-## Dependencies
-
-asdf
-
-## Compatibility
-
-asdf
+lazyImages is a small jQuery plugin that helps you make your site load 
+faster by postponing the loading of images until they get close to the viewport.
 
 ## Usage
 
-### `asdf.asdf.asdf`
+### Example Implementation
 
-bla
-
-``` javascript
-$(document).bla();
+``` html
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="jquery.lazyimages.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".lazy-image").lazyImages({
+					onLoad : function() {
+						console.log("custom on load function");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+	  	<h1>my picure gallery</h1>
+		<img src="images/placeholder.png" data-original="images/1.jpg" class="lazy-image" width="200px" height="200px" />
+		<br />
+		<img src="images/placeholder.png" data-original="images/2.jpg" class="lazy-image" width="200px" height="200px" />
+	</body>
+	</html>
 ```
 
-bla
+### Setup
 
-``` javascript
-$(document).bla()
+Reference the jQuery library like so:
+``` html
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 ```
 
-bla
+Include the lazyImages plugin 
+* `jquery.lazyimages.js` - for development
+* `jquery.lazyimages.min.js` - for production
 
-1. `$(document).bla()`
-2. `$(document).bla()`
+``` html
+	<script src="your-js-folder/jquery.lazyimages(.min).js"></script>
+```
 
-bla bla:
+Prepare your img elements attributes
 
-1. first
-2. second
-3. third
+* `src` - can be empty, contain a loading gif or maybe even a base64 encoded transparent pixel XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+* `class` - choose your own class name to describe those images like class="lazyImages"
+* `data-original` - define an attribute to store the actual source address of your image. You can also change the name of that attribute to something else like "rel=''" but you will have to let the plugin know by passing in the new name via the "sourceAttribute" field in the configuration object.
+* `width and height` - not mandatory XXXXXXXXXXXXXXXXX but nice to have. Saves the browser from having to rerender certain bits and pieces of your site when it gets the actual dimensions.
 
-### `$.asdf.click`
+``` html
+<img src="images/placeholder.png" data-original="images/1.jpg" class="lazy-image" width="200px" height="200px" />
+```
 
-bla
+Fire up the plugin by passing in the selector of your images and if needed a custom configuration (in this case the threshold is changed)
 
-**NOTE** note stuff
+``` html
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".lazy-image").lazyImages({
+				threshold : 100
+			});
+		});
+	</script>
+```
 
-### Events
+### Default settings
 
 asdf
-
-#### start and end
-
-* `afd` - asdf
-* `asdf:asfd` - asdf
-
-asddsf
-
-#### ajax related
-
-* `sadfsda:afsafs` - Fired before the pjax request begins. Returning false will abort the request.
-
-`send` and `complete` are a good pair of events to use if you are implementing a loading indicator. They'll only be triggered if an actual request is made, not if it's loaded from cache.
 
 
 [compat]: http://www.google.de

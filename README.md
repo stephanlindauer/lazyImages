@@ -76,23 +76,22 @@ The default settings are defined by this object:
 
 ```js
 {
-	threshold : 100,
-	sourceAttribute : "data-original",
+	threshold : 100, 					//in pixels
+	sourceAttribute : "data-original" 	//the attribut where the actual image is stored in
 }
 ```
 
 You can change those settings by passing in your custom settings object. Everything that you don't define will fallback to the default setting.
 
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$(".lazy-image").lazyImages({
-					threshold : *** your custom threshold value *** ,
-					sourceAttribute : *** your custom source attribute where lazy Images can find the actual image ***
-				});
+``` html
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".lazy-image").lazyImages({
+				threshold : *** your custom threshold value *** ,
+				sourceAttribute : *** your custom source attribute where lazyImages can find the actual image ***
 			});
-		</script> 
-
-
-
+		});
+	</script> 
+```
 
 [compat]: http://www.google.de

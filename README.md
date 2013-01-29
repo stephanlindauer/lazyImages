@@ -18,9 +18,7 @@ faster by postponing the loading of images until they get close to the viewport.
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$(".lazy-image").lazyImages({
-					onLoad : function() {
-						console.log("custom on load function");
-					}
+					threshold : 500
 				});
 			});
 		</script>
@@ -51,10 +49,10 @@ Include the lazyImages plugin
 
 Prepare your img elements attributes
 
-* `src` - can be empty, contain a loading gif or maybe even a base64 encoded transparent pixel XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+* `src` - can be empty, contain a loading gif or maybe even a base64 encoded transparent pixel (which would be `src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="`)
 * `class` - choose your own class name to describe those images like class="lazyImages"
 * `data-original` - define an attribute to store the actual source address of your image. You can also change the name of that attribute to something else like "rel=''" but you will have to let the plugin know by passing in the new name via the "sourceAttribute" field in the configuration object.
-* `width and height` - not mandatory XXXXXXXXXXXXXXXXX but nice to have. Saves the browser from having to rerender certain bits and pieces of your site when it gets the actual dimensions.
+* `width and height` - not mandatory but nice to have. Saves the browser from having to rerender certain bits and pieces of your site when it gets the actual size of the image.
 
 ``` html
 <img src="images/placeholder.png" data-original="images/1.jpg" class="lazy-image" width="200px" height="200px" />
@@ -74,7 +72,27 @@ Fire up the plugin by passing in the selector of your images and if needed a cus
 
 ### Default settings
 
-asdf
+The default settings are defined by this object:
+
+```js
+{
+	threshold : 100,
+	sourceAttribute : "data-original",
+}
+```
+
+You can change those settings by passing in your custom settings object. Everything that you don't define will fallback to the default setting.
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".lazy-image").lazyImages({
+					threshold : *** your custom threshold value *** ,
+					sourceAttribute : *** your custom source attribute where lazy Images can find the actual image ***
+				});
+			});
+		</script> 
+
+
 
 
 [compat]: http://www.google.de

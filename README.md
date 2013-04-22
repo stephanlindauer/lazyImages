@@ -1,4 +1,4 @@
-# lazyIamges
+# lazyImages
 
 ## What's it for?
 
